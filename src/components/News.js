@@ -52,7 +52,7 @@ export class News extends Component {
                 <h5 className="my-3 text-center">News Monkey Headlines</h5>
                 {this.state.loading && <Spinner/>}
                 <div className="row">
-                    {this.state.articles.map((element)=>{
+                    {!this.state.loading && this.state.articles.map((element)=>{
                     return <div className="col-md-4 mt-3" key={element.url} >
                                 <NewsItem title={element.title?element.title:"No News"} description={element.description?element.description:"No News"} imageUrl={element.urlToImage} newsUrl={element.url}/>
                             </div>
