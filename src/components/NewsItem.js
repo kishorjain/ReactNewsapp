@@ -1,4 +1,8 @@
 import React from 'react'
+const handleImgError=(e)=>{
+    e.target.src = "/noimage.png";//bydefault react understand this is present in react public folder
+
+}
 
 const NewsItem =(props)=> {
     
@@ -8,7 +12,7 @@ const NewsItem =(props)=> {
                 <div className="card" >
                     <span className="position-absolute top-0 translate-middle badge rounded-pill bg-danger" style={{ left: '85%', zIndex: '1' }}>
                         {source}</span>
-                    <img src={imageUrl} className="card-img-top" alt="" style={{ "maxHeight": "160px" }} />
+                    <img src={imageUrl}onError={handleImgError} className="card-img-top" alt="{/noimage.png}" style={{ "maxHeight": "160px" }} />
                     <div className="card-body">
                         <h5 className="card-title">{title.slice(0, 35)}...</h5>
 
